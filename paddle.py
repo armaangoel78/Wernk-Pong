@@ -8,7 +8,7 @@ class Paddle(pygame.sprite.Sprite):
 
         self.win_h = win_h
 
-        width, height = int(win_w/50), int(win_h/5)
+        width, height = int(win_w/25), int(win_w/5)
 
         y = win_h/2 - height/2
 

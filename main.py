@@ -14,8 +14,8 @@ pygame.display.set_caption("Wernk-Pong")
 
 controller = Controller()
 
-paddle_1 = Paddle(win_w, win_h, 10, "wernkepaddle.png", 10, controller.w, controller.s)
-paddle_2 = Paddle(win_w, win_h, win_w - 20, "beckpaddle.png", 10, controller.up, controller.down)
+paddle_1 = Paddle(win_w, win_h, 10, "assets/wernkepaddle3.png", 10, controller.w, controller.s)
+paddle_2 = Paddle(win_w, win_h, win_w - 30, "assets/beckpaddle3.png", 10, controller.up, controller.down)
 scoreboard = Scoreboard(win_w, win_h)
 ball = Ball(paddle_1, paddle_2, scoreboard, win_w, win_h, 10)
 

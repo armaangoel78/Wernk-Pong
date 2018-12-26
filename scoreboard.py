@@ -24,7 +24,6 @@ class Scoreboard(pygame.sprite.Sprite):
 
     def update(self, *args):
         score = str(self.player_1_score)+ " " + str(self.player_2_score)
-        print(score)
 
         textSurf = self.font.render(score, 1, (255, 255, 255))
         self.image = pygame.Surface((self.win_w/5, self.win_h/5))
