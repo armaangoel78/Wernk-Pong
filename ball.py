@@ -1,48 +1,68 @@
 import random, math
-from paddle import Paddle
+import pygame
 
-class Ball:
-    def __init__(self, paddle1, paddle2, win_h, win_w, size, speed, color):
-        self.paddle1 = paddle1
-        self.paddle2 = paddle2 
+
+class Ball(pygame.sprite.Sprite):
+
+    def __init__(self, paddle_1, paddle_2, scoreboard, win_w, win_h, vel):
+        super().__init__()
+
+        self.paddle_1 = paddle_1
+        self.paddle_2 = paddle_2
+        self.scoreboard = scoreboard
+
         self.win_h = win_h
         self.win_w = win_w
-        self.size = size
-        self.speed = speed
-        self.color = color
+
+        self.image = pygame.Surface([win_h/50, win_h/50])
+        self.image.fill((255, 255, 255))
+        self.rect = pygame.Rect(0, 0, win_h/50, win_h/50)
+
+        self.vel = vel
+        self.vel_x = None
+        self.vel_y = None
+
         self.restart()
 
     def restart(self):
-        self.x = self.win_w/2 - self.size/2
-        self.y = self.win_h/2 - self.size/2
+        self.rect.x = self.win_w/2 - self.rect.height/2
+        self.rect.y = self.win_h/2 - self.rect.width/2
+
         angle = random.randint(0,360)
-        self.vel_x = self.speed * math.cos(angle)
-        self.vel_y = self.speed * math.sin(angle)
+        self.vel_x = self.vel * math.cos(angle)
+        self.vel_y = self.vel * math.sin(angle)
 
     def update(self):
-        if (self.wall_collision()):
+        if self.wall_collision():
             self.vel_y = -self.vel_y
 
-        if (self.paddle1_collision() or self.paddle2_collision()):
+        if self.paddle_1_collision() or self.paddle_2_collision():
             self.vel_x = -self.vel_x
 
-        self.x += self.vel_x
-        self.y += self.vel_y
+        self.rect.x += self.vel_x
+        self.rect.y += self.vel_y
 
-        if (self.left()):
+        if self.left_screen():
+            if self.player_1_point():
+                self.scoreboard.player_1_point()
+            else:
+                self.scoreboard.player_2_point()
             self.restart()
 
     def wall_collision(self):
-        return (self.y <= 0) or (self.y+self.size >= self.win_h)
+        return (self.rect.y <= 0) or (self.rect.y + self.rect.height >= self.win_h)
 
-    def paddle1_collision(self):
-        return (self.vel_x < 0) and (self.x <= self.paddle1.x + self.paddle1.width) and (self.y <= self.paddle1.y + self.paddle1.height) and (self.y + self.size >= self.paddle1.y)
+    def paddle_1_collision(self):
+        return self.vel_x < 0 and pygame.sprite.spritecollide(self, [self.paddle_1], False)
 
-    def paddle2_collision(self):
-        return  (self.vel_x > 0) and (self.x + self.size >= self.paddle2.x) and (self.y <= self.paddle2.y + self.paddle2.height) and (self.y + self.size >= self.paddle2.y)
+    def paddle_2_collision(self):
+        return self.vel_x > 0 and pygame.sprite.spritecollide(self, [self.paddle_2], False)
 
-    def left(self):
-        return (self.x <= 0) or (self.x + self.size >= self.win_w)
+    def left_screen(self):
+        return (self.rect.x <= 0) or (self.rect.x + self.rect.width >= self.win_w)
 
-    def cords(self):
-        return (self.x, self.y, self.size, self.size)
+    def player_1_point(self):
+        return self.rect.x <= 0
+
+    def player_2_point(self):
+        return self.rect.x + self.rect.width >= self.win_w
