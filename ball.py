@@ -39,7 +39,7 @@ class Ball(pygame.sprite.Sprite):
 
         angle = [random.randint(0,1) * 180 + random.randint(-60,60) for x in range(10)]
         print(angle)
-        self.change_direction(0)
+        self.change_direction(angle[0])
 
     def change_direction(self, angle):
         angle = angle / 180 * math.pi
