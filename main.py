@@ -17,7 +17,7 @@ controller = Controller()
 paddle_1 = Paddle(win_w, win_h, 10, "assets/wernkepaddle3.png", 10, controller.w, controller.s)
 paddle_2 = Paddle(win_w, win_h, win_w - 30, "assets/beckpaddle3.png", 10, controller.up, controller.down)
 scoreboard = Scoreboard(win_w, win_h)
-ball = Ball(paddle_1, paddle_2, scoreboard, win_w, win_h, 10)
+ball = Ball(paddle_1, paddle_2, scoreboard, win_w, win_h, 10, "assets/wernkeball2.png", "assets/beckball.png")
 
 sprites = pygame.sprite.Group([paddle_1, paddle_2, scoreboard, ball])
 
