@@ -4,6 +4,7 @@ import pygame
 class Controller:
     def __init__(self):
         self.keys = None
+        self.update()
 
     def update(self):
         self.keys = pygame.key.get_pressed()
@@ -20,5 +21,6 @@ class Controller:
     def down(self):
         return self.keys[pygame.K_DOWN]
 
-
+    def space(self):
+        return self.keys[pygame.K_SPACE]
    
