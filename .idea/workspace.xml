@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a8e6a6-0f38-4a5e-8849-90ac4c89f5a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ai_support.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WernkePong.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WernkePong.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ball.py" beforeDir="false" afterPath="$PROJECT_DIR$/ball.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paddle.py" beforeDir="false" afterPath="$PROJECT_DIR$/paddle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545693604122</updated>
-      <workItem from="1546432428925" duration="7239000" />
+      <workItem from="1546432428925" duration="7297000" />
     </task>
     <task id="LOCAL-00001" summary="Added better sprite images">
       <created>1545864302146</created>
@@ -180,11 +170,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545879818962</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="got the ai working&#10;tweaked the ball and paddle velocities to be more exciting&#10;messaged more information in discord">
+      <created>1546461744703</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546461744703</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36070000" />
+    <option name="totallyTimeSpent" value="36128000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -197,7 +194,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1231" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17250213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -230,7 +226,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added better sprite images" />
     <MESSAGE value="Added angle changing based on hit height" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added angle changing based on hit height" />
+    <MESSAGE value="got the ai working&#10;tweaked the ball and paddle velocities to be more exciting&#10;messaged more information in discord" />
+    <option name="LAST_COMMIT_MESSAGE" value="got the ai working&#10;tweaked the ball and paddle velocities to be more exciting&#10;messaged more information in discord" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pygame/sprite.py" />
