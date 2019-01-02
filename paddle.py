@@ -8,9 +8,9 @@ class Paddle(pygame.sprite.Sprite):
 
         self.win_h = win_h
 
-        width, height = int(win_w/25), int(win_w/5)
+        width, height = int(win_w / 25), int(win_w / 5)
 
-        y = win_h/2 - height/2
+        y = win_h / 2 - height / 2
 
         self.rect = pygame.Rect(x, y, width, height)
         self.vel = vel
