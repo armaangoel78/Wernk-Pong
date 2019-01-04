@@ -10,10 +10,6 @@ pygame = "*"
 numpy = "*"
 tensorflow = "*"
 keras = "*"
-keras-rl = "*"
-pyautogui = "*"
-"python3-xlib" = "*"
-keyboard = "*"
 
 [requires]
 python_version = "3.5"

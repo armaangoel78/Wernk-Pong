@@ -18,12 +18,12 @@ def play_ai(ball, paddle):
     destination = model.predict(np.array([[vel_x, vel_y, x, y]])) * 500
 
     if destination > paddle.rect.y + paddle.rect.height / 2:
-        print(paddle.rect.y, destination, (ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y),
-              simulate_ball(ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y) if ball.vel_x >= 0 else -1, 'd')
+        #print(paddle.rect.y, destination, (ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y),
+              #simulate_ball(ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y) if ball.vel_x >= 0 else -1, 'd')
         paddle.down()
     else:
-        print(paddle.rect.y, destination, (ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y),
-              simulate_ball(ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y) if ball.vel_x >= 0 else -1, 'u')
+        #print(paddle.rect.y, destination, (ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y),
+              #simulate_ball(ball.vel_x, ball.vel_y, ball.vel, ball.rect.x, ball.rect.y) if ball.vel_x >= 0 else -1, 'u')
         paddle.up()
 
 
@@ -125,9 +125,9 @@ class Ball(pygame.sprite.Sprite):
 
     # Points
 
-    def check_points(self, reset=True):
-        player_1_point = self.rect.x <= 0
-        player_2_point = self.rect.x + self.rect.width >= self.win_w
+    def check_points(self):
+        player_2_point = self.rect.x <= 0
+        player_1_point = self.rect.x + self.rect.width >= self.win_w
 
         if player_1_point or player_2_point:
             if player_1_point:
@@ -135,9 +135,8 @@ class Ball(pygame.sprite.Sprite):
             else:
                 self.scoreboard.player_2_point()
 
-            print('<<<<<<<<<<<<<<<<<<<<point ', self.rect.y)
+            self.restart()
 
-            if reset:
-                self.restart()
             return True
+
         return False
