@@ -3,23 +3,18 @@ import pygame
 
 class Controller:
     def __init__(self):
-        self.keys = None
+        pygame.joystick.init()
+        self.joystick = ([pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())])[0]
+        self.joystick.init()
+
         self.update()
 
+
     def update(self):
-        self.keys = pygame.key.get_pressed()
-
-    def w(self):
-        return self.keys[pygame.K_w]
-
-    def s(self):
-        return self.keys[pygame.K_s]
+        self.value = self.joystick.get_axis(1)
 
     def up(self):
-        return self.keys[pygame.K_UP]
-
+        return self.value < -0.5
+    
     def down(self):
-        return self.keys[pygame.K_DOWN]
-
-    def space(self):
-        return self.keys[pygame.K_SPACE]
+        return self.value > 0.5
