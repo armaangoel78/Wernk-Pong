@@ -10,6 +10,7 @@ pygame = "*"
 numpy = "*"
 tensorflow = "*"
 keras = "*"
+opencv-python = "*"
 
 [requires]
 python_version = "3.5"
