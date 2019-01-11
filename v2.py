@@ -42,6 +42,7 @@ pygame.display.set_caption("Wernk-Pong")
 
 games = 0
 
+last_sc = None
 while run:
     if games == 0 or (pygame.MOUSEBUTTONUP in [event.type for event in pygame.event.get()]): 
         paddle_1 = Paddle(win_w, win_h, 10, "assets/wernkepaddle3.png", 10, up, down)
@@ -53,6 +54,8 @@ while run:
         line = Line(win_w, win_h)
 
         sprites = pygame.sprite.Group([paddle_1, paddle_2, scoreboard, error, ball, line])
+
+        last_sc = scoreboard
 
     while run and scoreboard.player_1_score + scoreboard.player_2_score < 5:
         ret, frame = cap.read()
@@ -106,5 +109,8 @@ while run:
                 run = False
 
     games += 1
+
+last_sc.update()
+
 cap.release()
 cv2.destroyAllWindows()
